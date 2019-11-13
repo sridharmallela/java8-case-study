@@ -19,5 +19,12 @@
 
 ### URLS
 
-* POST `http://localhost:8080/admin/traders/create`
-* GET `http://localhost:8080/admin/traders`
+### Get All Traders
+
+ | Usage | Method | URL | Body |
+ | ---- | ---- | ----|---- |
+ | List all Traders | GET | `http://localhost:8080/admin/traders` | |
+ | Find Trader by Id | GET | `http://localhost:8080/admin/traders/id/3` | |
+ | Find Trader by FirstName | GET | `http://localhost:8080/admin/traders/name/John` | |
+ | Create/Update Trader | POST | `http://localhost:8080/admin/traders` | ``` { "firstName": "Jamie", "lastName": "Moncayo",  "email": "123456@gmail.com", "phoneNum": "1236540987"  } ```|
+ | Delete Trader | DELETE | `http://localhost:8080/admin/traders` | ``` { "traderId" : 3, "firstName": "Jamie", "lastName": "Moncayo",  "email": "123456@gmail.com", "phoneNum": "1236540987"  } ```|
