@@ -19,4 +19,5 @@
 
 ### URLS
 
-* POST `http://localhost:8080/admin/trader/create`
+* POST `http://localhost:8080/admin/traders/create`
+* GET `http://localhost:8080/admin/traders`
