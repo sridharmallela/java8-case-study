@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Trader {
@@ -12,26 +13,26 @@ public class Trader {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long traderId;
 
-    String firstName = "";
+    @NotNull
+    String firstName;
 
-    String lastName = "";
+    @NotNull
+    String lastName;
 
-    String email = "";
+    @NotNull
+    String email;
 
-    String phoneNum = "";
-
-    String address = "";
-
-    String city = "";
-
-    String zipCode = "";
+    @NotNull
+    String phoneNum;
 
     protected Trader() {
     }
 
-    public Trader(String firstName, String lastName) {
+    public Trader(String firstName, String lastName, String email, String phoneNum) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+        this.phoneNum =  phoneNum;
     }
 
     public Long getTraderId() {
@@ -52,17 +53,5 @@ public class Trader {
 
     public String getPhoneNum() {
         return phoneNum;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getZipCode() {
-        return zipCode;
     }
 }
