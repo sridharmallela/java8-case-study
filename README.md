@@ -1,3 +1,6 @@
 # java8-case-study
-# collaborators 
-# Jaime Moncayo
+
+## Collaborators 
+
+* Jaime Moncayo
+* Santosh Pradhan
