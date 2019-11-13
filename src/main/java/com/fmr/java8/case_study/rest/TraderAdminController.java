@@ -9,11 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("admin/traders")
@@ -22,7 +18,7 @@ public class TraderAdminController {
     @Autowired
     TraderRepository traderRepository;
 
-    @PostMapping(path = "create", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Trader> createTrader(@RequestBody Trader trader) {
         return new ResponseEntity(
             traderRepository.save(trader),
@@ -33,7 +29,14 @@ public class TraderAdminController {
     public ResponseEntity<List<Trader>> findAllTraders() {
         return new ResponseEntity(
             traderRepository.findAll(),
-            HttpStatus.CREATED);
+            HttpStatus.OK);
+    }
+
+
+    @DeleteMapping(path = "")
+    public ResponseEntity<Trader> deleteTrader(@RequestBody Trader trader){
+        traderRepository.delete(trader);
+        return new ResponseEntity("Delete successful",HttpStatus.OK);
     }
     
 }
