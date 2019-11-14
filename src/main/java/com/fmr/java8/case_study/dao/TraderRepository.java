@@ -11,4 +11,5 @@ public interface TraderRepository extends CrudRepository<Trader, Long> {
 
     List<Trader> findAllByLastName(String lastName);
     List<Trader> findAllByEmail (String email);
+    List<Trader> findAllByPhoneNum (String phone);
 }

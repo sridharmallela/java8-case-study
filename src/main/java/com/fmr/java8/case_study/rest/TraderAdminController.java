@@ -59,4 +59,11 @@ public class TraderAdminController {
     			traderRepository.findAllByEmail(email),
     			HttpStatus.OK);
     }
+    
+    @GetMapping(path = "phoneNum/{phoneNum}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Trader>> findTraderByPhone(@PathVariable (name = "phoneNum") String phoneNum) {
+    	return new ResponseEntity(
+    			traderRepository.findAllByPhoneNum(phoneNum),
+    			HttpStatus.OK);
+    }
 }
