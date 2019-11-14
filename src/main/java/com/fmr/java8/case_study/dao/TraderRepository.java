@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface TraderRepository extends CrudRepository<Trader, Long> {
 
-    List<Trader> findAllByFirstName(String firstName);
+    List<Trader> findAllByLastName(String lastName);
+    List<Trader> findAllByEmail (String email);
 }

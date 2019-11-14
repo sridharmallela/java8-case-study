@@ -31,10 +31,10 @@ public class TraderAdminController {
             HttpStatus.OK);
     }
 
-    @GetMapping(path = "name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Trader>> findTraderByFirstName(@PathVariable(name = "name") String name) {
+    @GetMapping(path = "lastname/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Trader>> findTraderByLastName(@PathVariable(name = "name") String name) {
         return new ResponseEntity(
-            traderRepository.findAllByFirstName(name),
+            traderRepository.findAllByLastName(name),
             HttpStatus.OK);
     }
 
@@ -51,5 +51,12 @@ public class TraderAdminController {
         return new ResponseEntity(
             "{Delete successful}",
             HttpStatus.OK);
+    }
+    
+    @GetMapping(path = "email/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Trader>> findTraderByEmail(@PathVariable (name = "email") String email) {
+    	return new ResponseEntity(
+    			traderRepository.findAllByEmail(email),
+    			HttpStatus.OK);
     }
 }
