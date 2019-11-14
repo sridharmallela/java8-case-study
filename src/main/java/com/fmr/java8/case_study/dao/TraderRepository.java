@@ -4,8 +4,13 @@ import com.fmr.java8.case_study.domain.Trader;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface TraderRepository extends CrudRepository<Trader, Long> {
 
-    Trader findByTraderId(String id);
+    List<Trader> findAllByLastName(String lastName);
+    List<Trader> findAllByEmail (String email);
+    List<Trader> findAllByPhoneNum (String phone);
+    List<Trader> findAllByTraderId (Long id);
 }

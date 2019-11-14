@@ -32,7 +32,7 @@ public class Trader {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phoneNum =  phoneNum;
+        this.phoneNum = phoneNum;
     }
 
     public Long getTraderId() {
