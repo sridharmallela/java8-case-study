@@ -49,11 +49,11 @@ public class TraderAdminController {
     }
     
     
-    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> getTraderById(@RequestParam(value="traderId")String tradeId) {
+    @GetMapping(path = "traderId/{traderId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getTraderById(@PathVariable(value="traderId")Long tradeId) {
         return new ResponseEntity(
-            traderRepository.findByTraderId(tradeId),
-            HttpStatus.CREATED);
-    }
+            traderRepository.findAllByTraderId(tradeId),
+            HttpStatus.OK);
+    }  
     
 }
